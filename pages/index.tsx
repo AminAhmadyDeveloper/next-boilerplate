@@ -1,8 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
+import { Prism } from "react-syntax-highlighter";
+import { darcula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import styles from "@styles/Home.module.css";
+import useCounter from "@hooks/useCounter";
+import useIndex from "@hooks/useIndex";
+import FormikFormSample from "components/FormikFormSample";
+import useFormikFormSample from "@hooks/useFormikFormSample";
+import { LODASH_CODE_EXAMPLE, LODASH_CODE_EXAMPLE_BOX } from "@constants/CApp";
 
 export default function Home() {
+  const { count, increase } = useCounter();
+  const { reactQueryCardText } = useIndex();
+  const formikFormSampleHook = useFormikFormSample();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -51,6 +62,63 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
+
+          <h1 className={styles.title}>
+            Packages <a>Added</a>
+          </h1>
+
+          <p className={styles.description}>
+            Packages used are:{" "}
+            <code className={styles.code}>
+              Axios, React Query, Redux/Toolkit, Formik/Yup, React Syntax
+              Highlighter
+            </code>
+          </p>
+
+          <span onClick={increase} className={styles.card}>
+            <h2>Redux - {count} &rarr;</h2>
+            <p>
+              Tap on button to increase count on Redux state, it includes
+              Redux/Toolkit and custom hook to control it. MAX IS : 99
+            </p>
+          </span>
+
+          <a
+            href="https://tanstack.com/query/v4/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.card}
+          >
+            <h2>Axios + Query &rarr;</h2>
+            <p>{reactQueryCardText}...</p>
+          </a>
+
+          <div className={styles.card}>
+            <h2>Formik - Yup &rarr;</h2>
+            <p>
+              This is form made with Formik and Connected to Yup for validation
+              using validation schema, Form never been this easy before!
+            </p>
+            <FormikFormSample
+              onSubmit={(values) => formikFormSampleHook.setFormValues(values)}
+              formHook={formikFormSampleHook}
+            />
+          </div>
+
+          <div className={styles.card}>
+            <h2>Lodash - Utilities &rarr;</h2>
+            <p>
+              Lodash is a JavaScript library which provides utility functions
+              for common programming tasks using the functional programming
+            </p>
+            <Prism
+              language="typescript"
+              style={darcula}
+              customStyle={LODASH_CODE_EXAMPLE_BOX}
+            >
+              {LODASH_CODE_EXAMPLE}
+            </Prism>
+          </div>
         </div>
       </main>
 
@@ -62,8 +130,15 @@ export default function Home() {
         >
           Powered by{" "}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image
+              src="/vercel.svg"
+              alt="Vercel Logo"
+              width={72}
+              height={16}
+              style={{ marginRight: 8 }}
+            />
           </span>
+          & Developed by Amin Ahmady
         </a>
       </footer>
     </div>

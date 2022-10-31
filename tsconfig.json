@@ -28,7 +28,8 @@
       "@constants/*": ["utilities/constants/*"],
       "@data/*": ["utilities/data/*"],
       "@helpers/*": ["utilities/helpers/*"],
-      "@validators/*": ["utilities/validators/*"]
+      "@validators/*": ["utilities/validators/*"],
+      "@schema/*": ["utilities/validators/schema/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

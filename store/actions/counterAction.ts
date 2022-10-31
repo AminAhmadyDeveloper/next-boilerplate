@@ -11,4 +11,7 @@ export const counterActions = {
   incrementByAmount: (state: ICounterState, action: PayloadAction<number>) => {
     state.value += action.payload;
   },
+  resetCount: (state: ICounterState) => {
+    state.value = 0;
+  },
 };

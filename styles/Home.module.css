@@ -83,6 +83,9 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
+  min-width: 300px;
+  cursor: pointer;
+  user-select: none;
 }
 
 .card:hover,
@@ -97,10 +100,54 @@
   font-size: 1.5rem;
 }
 
+.card span {
+  padding: 1rem 0;
+}
+
 .card p {
   margin: 0;
   font-size: 1.25rem;
   line-height: 1.5;
+}
+
+.form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form > label {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form > input {
+  margin: 5px 0;
+  padding: 12px 18px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.error {
+  margin: 5px 0;
+  padding: 12px 18px;
+  border: 1px solid red;
+  border-radius: 5px;
+  color: red;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.form > button {
+  margin: 5px 0;
+  padding: 12px 18px;
+  border: 1px solid #eaeaea;
+  border-radius: 5px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+  color: #0070f3;
+  text-decoration: none;
 }
 
 .logo {
