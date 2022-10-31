@@ -63,8 +63,8 @@ export default function Home() {
             </p>
           </a>
 
-          <h1 className={styles.title}>
-            Packages <a>Added</a>
+          <h1 className={styles.myTitle}>
+            Packages <a href="http://aminahmadydeveloper.github.io/">Added</a>
           </h1>
 
           <p className={styles.description}>
@@ -75,8 +75,8 @@ export default function Home() {
             </code>
           </p>
 
-          <span onClick={increase} className={styles.card}>
-            <h2>Redux - {count} &rarr;</h2>
+          <span onClick={increase} className={styles.myCard}>
+            <h2>Redux | {count} &rarr;</h2>
             <p>
               Tap on button to increase count on Redux state, it includes
               Redux/Toolkit and custom hook to control it. MAX IS : 99
@@ -87,14 +87,14 @@ export default function Home() {
             href="https://tanstack.com/query/v4/"
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.card}
+            className={styles.myCard}
           >
             <h2>Axios + Query &rarr;</h2>
             <p>{reactQueryCardText}...</p>
           </a>
 
-          <div className={styles.card}>
-            <h2>Formik - Yup &rarr;</h2>
+          <div className={styles.myCard}>
+            <h2>Formik + Yup &rarr;</h2>
             <p>
               This is form made with Formik and Connected to Yup for validation
               using validation schema, Form never been this easy before!
@@ -105,8 +105,13 @@ export default function Home() {
             />
           </div>
 
-          <div className={styles.card}>
-            <h2>Lodash - Utilities &rarr;</h2>
+          <a
+            href="https://lodash.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.myCard}
+          >
+            <h2>Lodash + RSH &rarr;</h2>
             <p>
               Lodash is a JavaScript library which provides utility functions
               for common programming tasks using the functional programming
@@ -118,7 +123,7 @@ export default function Home() {
             >
               {LODASH_CODE_EXAMPLE}
             </Prism>
-          </div>
+          </a>
         </div>
       </main>
 
