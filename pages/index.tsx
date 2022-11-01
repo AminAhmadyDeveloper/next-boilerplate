@@ -7,7 +7,12 @@ import useCounter from "@hooks/useCounter";
 import useIndex from "@hooks/useIndex";
 import FormikFormSample from "components/FormikFormSample";
 import useFormikFormSample from "@hooks/useFormikFormSample";
-import { LODASH_CODE_EXAMPLE, LODASH_CODE_EXAMPLE_BOX } from "@constants/CApp";
+import {
+  LODASH_CODE_EXAMPLE,
+  LODASH_CODE_EXAMPLE_BOX,
+  TAILWIND_CODE_EXAMPLE,
+  USEHOOKS_TS_CODE_EXAMPLE,
+} from "@constants/CApp";
 
 export default function Home() {
   const { count, increase } = useCounter();
@@ -71,7 +76,7 @@ export default function Home() {
             Packages used are:{" "}
             <code className={styles.code}>
               Axios, React Query, Redux/Toolkit, Formik/Yup, React Syntax
-              Highlighter
+              Highlighter, Tailwind, UseHooks-TS
             </code>
           </p>
 
@@ -124,6 +129,44 @@ export default function Home() {
               {LODASH_CODE_EXAMPLE}
             </Prism>
           </a>
+          <a
+            href="https://tailwindcss.com/docs/guides/nextjs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.myCard}
+          >
+            <h2>Tailwind - Style &rarr;</h2>
+            <p>Rapidly build modern websites without ever leaving your HTML.</p>
+            <Prism
+              language="html"
+              style={darcula}
+              customStyle={LODASH_CODE_EXAMPLE_BOX}
+            >
+              {TAILWIND_CODE_EXAMPLE}
+            </Prism>
+          </a>
+          <a
+            href="https://usehooks-ts.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.myCard}
+          >
+            <h2>Use Hooks - TS &rarr;</h2>
+            <Image
+              src="https://raw.githubusercontent.com/juliencrn/usehooks-ts/HEAD/screenshot.png"
+              alt="USE_HOOKS_TS"
+              width={1024}
+              height={372}
+              className="mt-16"
+            />
+            <Prism
+              language="typescript"
+              style={darcula}
+              customStyle={LODASH_CODE_EXAMPLE_BOX}
+            >
+              {USEHOOKS_TS_CODE_EXAMPLE}
+            </Prism>
+          </a>
         </div>
       </main>
 
@@ -143,7 +186,6 @@ export default function Home() {
               style={{ marginRight: 8 }}
             />
           </span>
-          & Developed by Amin Ahmady
         </a>
       </footer>
     </div>
